@@ -1,8 +1,9 @@
 import app from './App';
+import Config from './utils/configs';
 
-(async () => {
-  const hostname = '0.0.0.0';
-  const port = 4000;
+const config = Config.get()(async () => {
+  const hostname = config.service.host;
+  const port = config.service.port;
 
   app.listen(port, hostname, (err: any) => {
     if (err) {

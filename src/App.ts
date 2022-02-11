@@ -1,12 +1,18 @@
 import bodyParser = require('body-parser');
 import * as express from 'express';
+import { initDatabases } from './database';
 class App {
   public express: any;
   constructor() {
     this.express = express();
+    this.initDatabases();
     this.setMiddlewares();
     this.setRoutes();
   }
+  private initDatabases(): void {
+    initDatabases();
+  }
+
   private setMiddlewares(): void {
     this.express.use((req, res, next) => {
       res.header('Access-Control-Allow-Origin', req.headers.origin);
