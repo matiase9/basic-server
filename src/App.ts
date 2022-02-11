@@ -5,7 +5,7 @@ class App {
   public express: any;
   constructor() {
     this.express = express();
-    this.initDatabases();
+    //this.initDatabases();
     this.setMiddlewares();
     this.setRoutes();
   }

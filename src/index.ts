@@ -1,7 +1,9 @@
 import app from './App';
 import Config from './utils/configs';
 
-const config = Config.get()(async () => {
+const config = Config.get();
+
+(async () => {
   const hostname = config.service.host;
   const port = config.service.port;
 
